@@ -1,0 +1,44 @@
+{
+  "id": "m1-s2",
+  "titulo": "M1 Cuaderno semanal 2",
+  "bloques": [
+    {
+      "tipo": "texto_libre",
+      "titulo": "Clave 2",
+      "pregunta": "¿Cuál es la fuente de tu inspiración?",
+      "subpreguntas": [
+        "¿Qué valores sociales o familiares te motivan?",
+        "¿Qué te interesa naturalmente?",
+        "¿Qué te debería inspirar para ser la mejor versión de ti mismo?"
+      ]
+    },
+    {
+      "tipo": "lista_numerada",
+      "titulo": "Reflexión 2",
+      "pregunta": "¿Cuál es tu estrategia de compensación principal? ¿Cuáles son secundarias?",
+      "cantidad_items": 7
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 2", "Meditación 2", "Evaluación 2"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "lista_numerada",
+      "titulo": "Desafío 2",
+      "pregunta": "Aléjate de tus alergias — Identifica las cosas que activan tus aflicciones emocionales.",
+      "cantidad_items": 7
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 2",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Evaluación 2",
+      "pregunta": "¿Qué nivel de sintonía tienes con tu cuerpo? Toma conciencia de cómo se somatizan las emociones en rigidez y tensión."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "m1-s1",
+  "titulo": "M1 Cuaderno semanal 1",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 1",
+      "pregunta": "Desarrolla tu ritual matinal.",
+      "columnas": ["Hora", "Actividad"],
+      "filas": 8
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 1",
+      "pregunta": "¿Cuánto potencial hay en ti? ¿Qué pensamientos, emociones o conductas quieres mejorar en ti? ¿Cuáles son las áreas que quieres mejorar en ti?"
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 1", "Meditación 1", "Evaluación 1"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "lista_numerada",
+      "titulo": "Conducta 1",
+      "pregunta": "Simplifica tu vida. ¿Qué sobra? Haz una lista de actividades en tu vida que NO aportan gran valor.",
+      "cantidad_items": 7
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 1",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Evaluación 1",
+      "pregunta": "¿Qué has descubierto dentro de ti? ¿Qué estado predomina? ¿En qué cosas he invertido mi tiempo, mi energía y atención esta semana?"
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión final 1",
+      "pregunta": "¿Qué has aprendido de esta lección? ¿Qué beneficios te ha aportado? ¿Hay algo que te haya sido útil especialmente?"
+    }
+  ]
+}

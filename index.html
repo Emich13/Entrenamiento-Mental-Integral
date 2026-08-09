@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>EMI · Cuadernillo digital</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="btn-menu" class="btn-icon" aria-label="Abrir índice de semanas" aria-expanded="false">☰</button>
+    <h1>EMI · Cuadernillo digital</h1>
+  </header>
+
+  <div class="layout">
+    <div id="overlay" class="overlay"></div>
+
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <span>Semanas</span>
+        <button id="btn-close-menu" class="btn-icon sidebar-close" aria-label="Cerrar índice">✕</button>
+      </div>
+      <ul id="lista-semanas" class="lista-semanas">
+        <!-- se llena dinámicamente -->
+      </ul>
+      <div class="sidebar-footer">
+        <button id="btn-exportar" class="btn btn-secondary">⬇ Exportar progreso</button>
+        <button id="btn-importar" class="btn btn-secondary">⬆ Importar progreso</button>
+        <input type="file" id="input-importar" accept="application/json" hidden />
+        <p id="guardado-info" class="guardado-info" aria-live="polite"></p>
+      </div>
+    </nav>
+
+    <main id="contenido" class="contenido">
+      <p class="cargando">Cargando cuadernillo…</p>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

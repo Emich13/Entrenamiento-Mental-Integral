@@ -1,0 +1,332 @@
+:root {
+  --azul: #1d4ed8;
+  --azul-claro: #eff4ff;
+  --naranja: #d97706;
+  --tinta: #1f2937;
+  --tinta-suave: #6b7280;
+  --borde: #e2e5ea;
+  --fondo: #f7f8fa;
+  --panel: #ffffff;
+  --ok: #16a34a;
+  --sidebar-w: 280px;
+  --radio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { line-height: 1.25; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--borde);
+}
+
+.topbar h1 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--azul);
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--tinta);
+}
+
+.sidebar-close { display: none; }
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100vh - 3.5rem);
+}
+
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--borde);
+  position: sticky;
+  top: 3.5rem;
+  height: calc(100vh - 3.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.5rem;
+  font-weight: 600;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lista-semanas {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.semana-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--tinta);
+}
+
+.semana-item:hover { background: var(--fondo); }
+
+.semana-item.activo {
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-weight: 600;
+}
+
+.semana-titulo { flex: 1; }
+
+.badge-progreso {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--fondo);
+  color: var(--tinta-suave);
+  white-space: nowrap;
+}
+
+.badge-progreso.completo {
+  background: #ecfdf3;
+  color: var(--ok);
+}
+
+.sidebar-footer {
+  padding: 0.75rem;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: var(--fondo);
+  color: var(--tinta);
+  border: 1px solid var(--borde);
+}
+
+.btn-secondary:hover { background: #eceef1; }
+
+.guardado-info {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--tinta-suave);
+  min-height: 1rem;
+}
+
+.contenido {
+  flex: 1;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 4rem;
+  max-width: 780px;
+}
+
+.cargando, .vacio {
+  color: var(--tinta-suave);
+}
+
+.semana-seccion { display: none; }
+.semana-seccion.activa { display: block; }
+
+.semana-seccion h2 {
+  color: var(--azul);
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.bloque {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.bloque-header {
+  background: #fdf1e0;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.bloque-header .bloque-titulo {
+  font-weight: 700;
+  color: #92400e;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.bloque-header .bloque-pregunta {
+  font-size: 0.92rem;
+  color: var(--tinta);
+}
+
+.bloque-body { padding: 0.75rem 0.9rem 0.9rem; }
+
+textarea.campo, input.campo {
+  width: 100%;
+  font: inherit;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: var(--panel);
+  color: var(--tinta);
+}
+
+textarea.campo {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+textarea.campo:focus, input.campo:focus {
+  outline: 2px solid var(--azul);
+  outline-offset: 1px;
+}
+
+.subpregunta { margin-bottom: 0.85rem; }
+.subpregunta:last-child { margin-bottom: 0; }
+
+.subpregunta-texto {
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.lista-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lista-item:last-child { margin-bottom: 0; }
+
+.lista-num {
+  flex-shrink: 0;
+  width: 1.4rem;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.tabla-scroll { overflow-x: auto; }
+
+table.tabla-campo {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table.tabla-campo th {
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--tinta-suave);
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+table.tabla-campo td {
+  padding: 0.3rem 0.4rem;
+  vertical-align: middle;
+}
+
+table.check-semana th, table.check-semana td {
+  text-align: center;
+}
+
+table.check-semana th:first-child, table.check-semana td:first-child {
+  text-align: left;
+}
+
+input[type="checkbox"].campo {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  :root { --sidebar-w: 78vw; }
+
+  .sidebar-close { display: inline-flex; align-items: center; justify-content: center; }
+
+  .sidebar {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-width: 320px;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  }
+
+  .sidebar.abierto { transform: translateX(0); }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    z-index: 25;
+  }
+
+  .overlay.visible { display: block; }
+
+  .contenido { padding: 1rem 0.85rem 4rem; }
+}
