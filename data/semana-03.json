@@ -1,0 +1,41 @@
+{
+  "id": "m1-s3",
+  "titulo": "M1 Cuaderno semanal 3",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 3",
+      "pregunta": "Escribe el aforismo que tendrás presente cada día.",
+      "columnas": ["Aforismo"],
+      "filas": ["Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 3",
+      "pregunta": "¿Cómo se manifiesta el vacío existencial en mí y cómo lo compenso?"
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 3", "Meditación 3", "Evaluación 3"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 3",
+      "pregunta": "Relata los patrones recurrentes: lo que percibes y cómo reaccionas."
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 3",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Evaluación 3",
+      "pregunta": "¿Cuánto tiempo has estado en el móvil, web y televisión?",
+      "columnas": ["Tiempo"],
+      "filas": ["Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+    }
+  ]
+}

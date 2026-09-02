@@ -115,18 +115,34 @@ más prácticas durante la semana.
 ```
 
 ### `tabla`
-Una tabla libre con columnas fijas y una cantidad de filas para
-completar (por ejemplo, un horario).
+Una tabla libre con columnas fijas. `filas` acepta dos formas:
 
-```json
-{
-  "tipo": "tabla",
-  "titulo": "Clave 3",
-  "pregunta": "Desarrolla tu ritual matinal.",
-  "columnas": ["Hora", "Actividad"],
-  "filas": 8
-}
-```
+- **Un número**: esa cantidad de filas en blanco, con todas las
+  columnas editables (por ejemplo, un horario libre).
+
+  ```json
+  {
+    "tipo": "tabla",
+    "titulo": "Clave 1",
+    "pregunta": "Desarrolla tu ritual matinal.",
+    "columnas": ["Hora", "Actividad"],
+    "filas": 8
+  }
+  ```
+
+- **Un array de etiquetas**: una fila fija por etiqueta (por ejemplo,
+  los días de la semana), con esa etiqueta de solo lectura en la
+  primera columna y las columnas editables al lado.
+
+  ```json
+  {
+    "tipo": "tabla",
+    "titulo": "Clave 3",
+    "pregunta": "Escribe el aforismo que tendrás presente cada día.",
+    "columnas": ["Aforismo"],
+    "filas": ["Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+  }
+  ```
 
 ### Agregar un tipo de bloque nuevo
 
@@ -155,4 +171,5 @@ js/app.js            renderizado genérico, autoguardado, export/import
 data/manifest.json   lista ordenada de semanas disponibles
 data/semana-01.json  contenido de la semana 1
 data/semana-02.json  contenido de la semana 2
+data/semana-03.json  contenido de la semana 3
 ```

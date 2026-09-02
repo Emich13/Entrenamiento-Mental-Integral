@@ -261,6 +261,11 @@ const RENDERERS_DE_BLOQUE = {
   },
 
   tabla(bloque, semanaId, bi) {
+    // "filas" acepta dos formas:
+    // - un número: N filas en blanco, todas las columnas editables (ej. horario libre).
+    // - un array de etiquetas: una fila fija por etiqueta (ej. los días de la
+    //   semana), con esa etiqueta de solo lectura en la primera columna y las
+    //   columnas editables al lado.
     const scroll = document.createElement("div");
     scroll.className = "tabla-scroll";
 
@@ -269,9 +274,12 @@ const RENDERERS_DE_BLOQUE = {
 
     const columnas = bloque.columnas || [];
     const filas = bloque.filas || 0;
+    const etiquetasFijas = Array.isArray(filas) ? filas : null;
+    const cantidadFilas = etiquetasFijas ? etiquetasFijas.length : filas;
 
     const thead = document.createElement("thead");
     const trHead = document.createElement("tr");
+    if (etiquetasFijas) trHead.appendChild(document.createElement("th"));
     columnas.forEach((col) => {
       const th = document.createElement("th");
       th.textContent = col;
@@ -281,8 +289,15 @@ const RENDERERS_DE_BLOQUE = {
     tabla.appendChild(thead);
 
     const tbody = document.createElement("tbody");
-    for (let fi = 0; fi < filas; fi++) {
+    for (let fi = 0; fi < cantidadFilas; fi++) {
       const tr = document.createElement("tr");
+
+      if (etiquetasFijas) {
+        const tdEtiqueta = document.createElement("td");
+        tdEtiqueta.textContent = etiquetasFijas[fi];
+        tr.appendChild(tdEtiqueta);
+      }
+
       columnas.forEach((_col, ci) => {
         const td = document.createElement("td");
         td.appendChild(crearCampoInput(`${semanaId}.b${bi}.${fi}.${ci}`));
