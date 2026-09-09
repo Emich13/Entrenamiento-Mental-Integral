@@ -1,0 +1,51 @@
+{
+  "id": "m1-s4",
+  "titulo": "M1 Cuaderno semanal 4",
+  "bloques": [
+    {
+      "tipo": "texto_libre",
+      "titulo": "Clave 4",
+      "pregunta": "No seas inconstante.",
+      "subpreguntas": [
+        "Comienzo de la meditación formal.",
+        "Duración de la meditación formal."
+      ]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 4",
+      "pregunta": "Identifica tu libertad.",
+      "subpreguntas": [
+        "Identifica tus libertades físicas",
+        "Identifica tus libertades mentales",
+        "Identifica las libertades externas de las que disfrutas."
+      ]
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 4", "Meditación 4", "Evaluación 4"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 4",
+      "pregunta": "Cultiva la recolección.",
+      "subpreguntas": [
+        "¿Cómo se diferencia el cuidado de la recolección?"
+      ]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 4",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Evaluación 4",
+      "pregunta": "Describe el mar de tu mente.",
+      "columnas": ["Descripción"],
+      "filas": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"]
+    }
+  ]
+}
