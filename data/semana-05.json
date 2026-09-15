@@ -1,0 +1,49 @@
+{
+  "id": "m1-s5",
+  "titulo": "M1 Cuaderno semanal 5",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 5",
+      "pregunta": "No seas temperamental.",
+      "columnas": ["Descripción"],
+      "filas": ["Patrón 1", "Patrón 2", "Patrón 3"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 5",
+      "pregunta": "Descubre tus recursos.",
+      "subpreguntas": [
+        "Reconoce tus recursos personales para el entrenamiento mental.",
+        "Reconoce los recursos externos a tu disposición para el entrenamiento mental."
+      ]
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 5", "Meditación 5", "Evaluación 5"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 5",
+      "pregunta": "Cultiva la autoconciencia.",
+      "subpreguntas": [
+        "A la hora de meditar, ¿en qué extremo tiende a estar mi mente?",
+        "En la vida cotidiana, ¿en qué extremo tiende a caer mi mente?"
+      ]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 5",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Evaluación 5",
+      "pregunta": "Describe la claridad de tu percepción.",
+      "columnas": ["Descripción"],
+      "filas": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"]
+    }
+  ]
+}
