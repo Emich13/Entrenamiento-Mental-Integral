@@ -1,0 +1,46 @@
+{
+  "id": "m1-s6",
+  "titulo": "M1 Cuaderno semanal 6",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 6",
+      "pregunta": "Pon en orden de prioridad los intereses que surjan esta semana.",
+      "columnas": ["Descripción"],
+      "filas": ["Interés 1", "Interés 2", "Interés 3"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 6",
+      "pregunta": "Valora la oportunidad extraordinaria",
+      "subpreguntas": [
+        "Agradece a todos los que contribuyeron a la libertad de la que disfrutas.",
+        "Agradece a todos los que contribuyeron a los recursos que te empoderan.",
+        "Valora lo que esta oportunidad extraordinaria te permite lograr."
+      ]
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 6", "Meditación 6", "Evaluación 6"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 6",
+      "pregunta": "¿De qué manera sueles engañar o manipular a otros?"
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 6",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Evaluación 6",
+      "pregunta": "Describe el autoengaño de este día.",
+      "columnas": ["Descripción"],
+      "filas": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"]
+    }
+  ]
+}
