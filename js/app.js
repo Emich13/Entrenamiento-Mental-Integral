@@ -310,6 +310,58 @@ const RENDERERS_DE_BLOQUE = {
     scroll.appendChild(tabla);
     return scroll;
   },
+
+  escala_semana(bloque, semanaId, bi) {
+    // Un renglón por día con una escala numérica de opción única
+    // (radio buttons), por ejemplo "Baja 1 2 3 ... 10 Alta".
+    const contenedor = document.createElement("div");
+    const min = bloque.escala_min ?? 1;
+    const max = bloque.escala_max ?? 10;
+
+    (bloque.dias || []).forEach((dia, fi) => {
+      const key = `${semanaId}.b${bi}.${fi}`;
+
+      const fila = document.createElement("div");
+      fila.className = "escala-fila";
+
+      const etiquetaDia = document.createElement("span");
+      etiquetaDia.className = "escala-dia";
+      etiquetaDia.textContent = dia;
+      fila.appendChild(etiquetaDia);
+
+      const opciones = document.createElement("div");
+      opciones.className = "escala-opciones";
+
+      if (bloque.etiqueta_min) {
+        const lbl = document.createElement("span");
+        lbl.className = "escala-etiqueta";
+        lbl.textContent = bloque.etiqueta_min;
+        opciones.appendChild(lbl);
+      }
+
+      for (let valor = min; valor <= max; valor++) {
+        const opcion = document.createElement("label");
+        opcion.className = "escala-opcion";
+        opcion.appendChild(crearCampoRadio(key, valor));
+        const num = document.createElement("span");
+        num.textContent = valor;
+        opcion.appendChild(num);
+        opciones.appendChild(opcion);
+      }
+
+      if (bloque.etiqueta_max) {
+        const lbl = document.createElement("span");
+        lbl.className = "escala-etiqueta";
+        lbl.textContent = bloque.etiqueta_max;
+        opciones.appendChild(lbl);
+      }
+
+      fila.appendChild(opciones);
+      contenedor.appendChild(fila);
+    });
+
+    return contenedor;
+  },
 };
 
 // ---------------------------------------------------------------------
@@ -346,6 +398,18 @@ function crearCampoCheckbox(key) {
   return el;
 }
 
+function crearCampoRadio(key, valor) {
+  const el = document.createElement("input");
+  el.type = "radio";
+  el.className = "campo";
+  el.name = key;
+  el.dataset.key = key;
+  el.value = String(valor);
+  el.checked = estado[key] === String(valor);
+  el.addEventListener("change", () => onCampoModificado(el));
+  return el;
+}
+
 function onCampoModificado(el) {
   const key = el.dataset.key;
   estado[key] = el.type === "checkbox" ? el.checked : el.value;
@@ -365,10 +429,24 @@ function actualizarProgreso(semanaId) {
   const semana = semanas.find((s) => s.id === semanaId);
   if (!semana || !semana.badgeEl) return;
 
+  // Los radios de un mismo grupo (campo.name) son UN solo campo lógico,
+  // no uno por opción, así que se cuentan una sola vez por grupo.
   const campos = semana.seccionEl.querySelectorAll(".campo");
-  const total = campos.length;
+  const gruposRadioVistos = new Set();
+  let total = 0;
   let completos = 0;
+
   campos.forEach((campo) => {
+    if (campo.type === "radio") {
+      if (gruposRadioVistos.has(campo.name)) return;
+      gruposRadioVistos.add(campo.name);
+      total++;
+      const grupo = semana.seccionEl.querySelectorAll(`input[name="${CSS.escape(campo.name)}"]`);
+      if (Array.from(grupo).some((r) => r.checked)) completos++;
+      return;
+    }
+
+    total++;
     const lleno = campo.type === "checkbox" ? campo.checked : campo.value.trim() !== "";
     if (lleno) completos++;
   });
@@ -472,6 +550,8 @@ function aplicarEstadoATodosLosCampos() {
     const key = campo.dataset.key;
     if (campo.type === "checkbox") {
       campo.checked = estado[key] === true;
+    } else if (campo.type === "radio") {
+      campo.checked = estado[key] === campo.value;
     } else {
       campo.value = typeof estado[key] === "string" ? estado[key] : "";
     }

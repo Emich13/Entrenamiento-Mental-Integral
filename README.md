@@ -144,18 +144,40 @@ Una tabla libre con columnas fijas. `filas` acepta dos formas:
   }
   ```
 
+### `escala_semana`
+Un renglón por día con una escala numérica de opción única (por
+ejemplo, "Baja 1 2 3 ... 10 Alta"). `etiqueta_min`/`etiqueta_max` son
+opcionales.
+
+```json
+{
+  "tipo": "escala_semana",
+  "titulo": "Evaluación 7",
+  "pregunta": "Necesidad de hablar.",
+  "dias": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"],
+  "escala_min": 1,
+  "escala_max": 10,
+  "etiqueta_min": "Baja",
+  "etiqueta_max": "Alta"
+}
+```
+
 ### Agregar un tipo de bloque nuevo
 
-Si algún PDF trae un formato de pregunta que no entra en los cuatro
-tipos de arriba, se agrega un tipo nuevo sin tocar el resto de la app:
+Si algún PDF trae un formato de pregunta que no entra en los tipos de
+arriba, se agrega un tipo nuevo sin tocar el resto de la app:
 
 1. En `js/app.js`, sumá una función nueva al objeto
    `RENDERERS_DE_BLOQUE` (buscá ese nombre en el archivo) que reciba
    `(bloque, semanaId, indiceBloque)` y devuelva el elemento del DOM a
    mostrar. Los campos editables que crees ahí deben usar
-   `crearCampoTextarea`, `crearCampoInput` o `crearCampoCheckbox` (o
-   llevar la clase `campo` y un `data-key` único) para que el
-   autoguardado y el contador de progreso los detecten solos.
+   `crearCampoTextarea`, `crearCampoInput`, `crearCampoCheckbox` o
+   `crearCampoRadio` (o llevar la clase `campo` y un `data-key` único)
+   para que el autoguardado y el contador de progreso los detecten
+   solos. Para un grupo de radios que representan una sola respuesta
+   (como en `escala_semana`), todas las opciones del grupo comparten
+   el mismo `data-key`/`name` — el contador de progreso ya sabe tratar
+   eso como un único campo.
 2. Usá ese `tipo` nuevo en el JSON de la semana que corresponda.
 
 El resto del código (guardado, exportar/importar, progreso, índice
@@ -165,11 +187,9 @@ específicos.
 ## Estructura de archivos
 
 ```
-index.html          shell de la app + índice lateral
-css/style.css        estilos
-js/app.js            renderizado genérico, autoguardado, export/import
-data/manifest.json   lista ordenada de semanas disponibles
-data/semana-01.json  contenido de la semana 1
-data/semana-02.json  contenido de la semana 2
-data/semana-03.json  contenido de la semana 3
+index.html            shell de la app + índice lateral
+css/style.css         estilos
+js/app.js             renderizado genérico, autoguardado, export/import
+data/manifest.json    lista ordenada de semanas disponibles
+data/semana-NN.json   contenido de cada semana (una por archivo)
 ```

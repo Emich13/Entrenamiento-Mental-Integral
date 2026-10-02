@@ -1,0 +1,49 @@
+{
+  "id": "m1-s7",
+  "titulo": "M1 Cuaderno semanal 7",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 7",
+      "pregunta": "¿Cómo puedo priorizar la meditación en mi vida?",
+      "columnas": ["Descripción"],
+      "filas": ["Estrategia 1", "Estrategia 2", "Estrategia 3"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 7",
+      "pregunta": "Los antídotos para las cinco aflicciones primarias",
+      "subpreguntas": [
+        "¿Cómo puedo neutralizar la pereza?",
+        "¿Cómo puedo neutralizar el miedo?",
+        "¿Cómo puedo neutralizar el deseo?"
+      ]
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 7", "Meditación 7", "Evaluación 7"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 7",
+      "pregunta": "¿Cuál es tu aflicción más grave y por qué?"
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 7",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "escala_semana",
+      "titulo": "Evaluación 7",
+      "pregunta": "Necesidad de hablar.",
+      "dias": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"],
+      "escala_min": 1,
+      "escala_max": 10,
+      "etiqueta_min": "Baja",
+      "etiqueta_max": "Alta"
+    }
+  ]
+}
