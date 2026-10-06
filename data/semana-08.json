@@ -1,0 +1,50 @@
+{
+  "id": "m1-s8",
+  "titulo": "M1 Cuaderno semanal 8",
+  "bloques": [
+    {
+      "tipo": "tabla",
+      "titulo": "Clave 8",
+      "pregunta": "Períodos de enfoque de corta duración.",
+      "columnas": ["Duración de la sesión", "Experiencia"],
+      "filas": ["Prueba 1", "Prueba 2", "Prueba 3"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Reflexión 8",
+      "pregunta": "Mi potencial es infinito.",
+      "subpreguntas": [
+        "Reconoce tu potencial de corregir tus errores.",
+        "Reconoce tu potencial de desarrollar tus cualidades.",
+        "Reconoce tu potencial de beneficiar a los demás."
+      ]
+    },
+    {
+      "tipo": "checkbox_semana",
+      "titulo": "Registra tu progreso",
+      "filas": ["Reflexión 8", "Meditación 8", "Evaluación 8"],
+      "dias": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Conducta 8",
+      "pregunta": "Rodéate de personas sanas.",
+      "subpreguntas": [
+        "Personas desfavorables:",
+        "Personas favorables:"
+      ]
+    },
+    {
+      "tipo": "texto_libre",
+      "titulo": "Meditación 8",
+      "pregunta": "Relata tu experiencia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Evaluación 8",
+      "pregunta": "Describe el progreso de tu estabilidad y lucidez.",
+      "columnas": ["Descripción"],
+      "filas": ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"]
+    }
+  ]
+}
